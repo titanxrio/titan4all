@@ -11,9 +11,9 @@ window.addEventListener('scroll', function() {
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
-// Intersection Observer for fade-in effects
+// Intersection Observer for fade-in effects on sections
 document.addEventListener('DOMContentLoaded', function () {
-  const sections = document.querySelectorAll('.categories, .partners, .hero, .product-hero, .titan-intro');
+  const sections = document.querySelectorAll('.hero, .categories, .partners, .product-hero, .titan-intro');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
   sections.forEach(section => observer.observe(section));
 });
 
-// Advanced Button Animations using Anime.js for multiple styles
+// Advanced Button Animations using Anime.js for multiple variants
 document.addEventListener("DOMContentLoaded", function () {
-  // Hero .cta (Variant 1)
+  // Hero CTA (Variant 1)
   document.querySelectorAll('.cta').forEach(button => {
     button.addEventListener('mouseenter', function() {
       anime({
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
-  // Additional effect for .btn (Variant 2) can be added if desired
+  // Product Page Button (Variant 2)
   document.querySelectorAll('.btn').forEach(button => {
     button.addEventListener('mouseenter', function() {
       anime({
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
-  // Titan .cta-alt (Variant 3)
+  // Titan CTA-alt (Variant 3)
   document.querySelectorAll('.cta-alt').forEach(button => {
     button.addEventListener('mouseenter', function() {
       anime({
