@@ -6,7 +6,7 @@
   <title>zerobyte – Ultimate Darkweb Experience</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Anime.js für dezente Animationen -->
+  <!-- Anime.js für dynamische Animationen -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
@@ -19,44 +19,76 @@
       <li><a href="titan.html">Titan</a></li>
     </ul>
   </nav>
-
+  
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Willkommen in der ultimativen Darkweb Experience</h1>
       <p>Erlebe, wie zerobyte Grenzen sprengt – Hightech trifft auf Dark Elegance.</p>
+      <!-- CTA Button mit krasser Animation -->
+      <a class="cta" href="#categories">
+        <span>Erkunde Mehr</span>
+        <span>
+          <svg width="66px" height="43px" viewBox="0 0 66 43" xmlns="http://www.w3.org/2000/svg">
+            <g id="arrow" fill="none" fill-rule="evenodd">
+              <path class="one" d="M40.15,3.89 L43.98,0.14 C44.17,-0.05 44.48,-0.05 44.68,0.14 L65.69,20.78 C66.09,21.17 66.09,21.81 65.70,22.20 L44.68,42.86 C44.48,43.05 44.17,43.05 43.98,42.86 L40.15,39.11 C39.96,38.91 39.95,38.60 40.15,38.40 L57.00,21.15 C57.19,20.96 57.19,20.65 57.00,20.35 L40.15,3.89 Z" fill="#FFFFFF"></path>
+              <path class="two" d="M20.15,3.89 L23.98,0.14 C24.17,-0.05 24.48,-0.05 24.68,0.14 L45.69,20.78 C46.09,21.17 46.09,21.81 45.70,22.20 L24.68,42.86 C24.48,43.05 24.17,43.05 23.98,42.86 L20.15,39.11 C19.96,38.91 19.95,38.60 20.15,38.40 L37.00,21.15 C37.19,20.96 37.19,20.65 37.00,20.35 L20.15,3.89 Z" fill="#FFFFFF"></path>
+              <path class="three" d="M0.15,3.89 L3.98,0.14 C4.17,-0.05 4.48,-0.05 4.68,0.14 L25.69,20.78 C26.09,21.17 26.09,21.81 25.70,22.20 L4.68,42.86 C4.48,43.05 4.17,43.05 3.98,42.86 L0.15,39.11 C-0.04,38.91 -0.04,38.60 0.15,38.40 L16.99,21.15 C17.19,20.96 17.19,20.65 17.00,20.35 L0.15,3.89 Z" fill="#FFFFFF"></path>
+            </g>
+          </svg>
+        </span>
+      </a>
     </div>
   </section>
-
-  <!-- Kategorien Section (erscheint beim Scrollen) -->
-  <section class="categories">
+  
+  <!-- Kategorien Section -->
+  <section class="categories" id="categories">
     <h2>Unsere Kategorien</h2>
     <div class="category-grid">
-      <div class="category-card" data-category="Tools">
+      <div class="category-card">
         <h3>Tools</h3>
         <p>Leistungsstarke Werkzeuge für digitale Meisterleistungen.</p>
       </div>
-      <div class="category-card" data-category="Server Boosts">
+      <div class="category-card">
         <h3>Server Boosts</h3>
         <p>Steigere die Performance deiner Infrastruktur.</p>
       </div>
-      <div class="category-card" data-category="Accounts">
+      <div class="category-card">
         <h3>Accounts</h3>
         <p>Exklusive Zugänge, die Privilegierte verbinden.</p>
       </div>
-      <div class="category-card" data-category="Subscriptions">
+      <div class="category-card">
         <h3>Subscriptions</h3>
         <p>Premium-Abos, maßgeschneidert für deinen Erfolg.</p>
       </div>
     </div>
   </section>
-
+  
+  <!-- Partner Section -->
+  <section class="partners">
+    <h2>Unsere Partner</h2>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <h3>Server 1</h3>
+        <p>Hochleistungs-Server für maximale Power.</p>
+      </div>
+      <div class="partner-card">
+        <h3>Server 2</h3>
+        <p>Sichere Infrastrukturlösungen auf höchstem Niveau.</p>
+      </div>
+      <div class="partner-card">
+        <h3>Server 3</h3>
+        <p>Modernste Cloud-Dienste für grenzenlose Möglichkeiten.</p>
+      </div>
+    </div>
+  </section>
+  
   <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 zerobyte. Alle Rechte vorbehalten.</p>
   </footer>
-
+  
   <script src="script.js"></script>
 </body>
 </html>
