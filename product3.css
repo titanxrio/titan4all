@@ -1,9 +1,10 @@
-/* product3.css - Styles for Product 3 Detail Page */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400;700&display=swap');
+
 :root {
   --bg-color: #151F28;
   --clr: #ff1867;
 }
+
 body {
   background: var(--bg-color);
   color: #fff;
@@ -14,6 +15,7 @@ body {
   align-items: center;
   padding: 20px;
 }
+
 .navbar {
   width: 100%;
   background: #1a1a1a;
@@ -23,25 +25,40 @@ body {
   align-items: center;
   margin-bottom: 50px;
 }
+
 .navbar .logo {
   color: var(--clr);
   font-size: 1.5rem;
   font-weight: bold;
 }
+
 .nav-links {
   list-style: none;
   display: flex;
 }
+
 .nav-links li { margin-left: 20px; }
+
 .nav-links li a { color: var(--clr); text-decoration: none; }
+
 .product-detail {
   text-align: center;
+  max-width: 800px;
 }
+
 .product-detail img {
   width: 300px;
   border-radius: 8px;
   margin: 20px 0;
 }
+
+.price {
+  font-size: 1.5rem;
+  color: var(--clr);
+  margin: 10px 0;
+}
+
+/* Glowing Button (using provided glowing style) */
 .glow-btn {
   position: relative;
   background: #fff;
@@ -58,25 +75,31 @@ body {
   overflow: hidden;
   --clr: var(--clr);
 }
+
 .glow-btn:focus { outline: none; }
+
 .glow-btn:hover {
   background: var(--clr);
   color: var(--clr);
   letter-spacing: 0.25em;
   box-shadow: 0 0 35px var(--clr);
 }
+
 .glow-btn::before {
   content: '';
   position: absolute;
   inset: 2px;
   background: var(--bg-color);
 }
+
 .glow-btn span { position: relative; z-index: 1; }
+
 .glow-btn i {
   position: absolute;
   inset: 0;
   display: block;
 }
+
 .glow-btn i::before {
   content: '';
   position: absolute;
@@ -88,10 +111,12 @@ body {
   transform: translateX(-50%) skewX(325deg);
   transition: 0.5s;
 }
+
 .glow-btn:hover i::before {
   width: 20px;
   left: 20%;
 }
+
 .glow-btn i::after {
   content: '';
   position: absolute;
@@ -103,6 +128,7 @@ body {
   transform: translateX(-50%) skewX(325deg);
   transition: 0.5s;
 }
+
 .glow-btn:hover i::after {
   width: 20px;
   left: 80%;
