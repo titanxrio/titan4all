@@ -1,4 +1,4 @@
-/* New Color Scheme and Advanced Animations */
+/* New Color Scheme & Epic Animations */
 :root {
   --bg-color: #0D0D0D;
   --secondary-bg: #1A1A1A;
@@ -109,7 +109,7 @@ body {
   margin-bottom: 30px;
 }
 
-/* CTA Button (Variant 1) – in Hero */
+/* CTA Button (Variant 1) in Hero */
 .cta {
   display: inline-flex;
   align-items: center;
@@ -326,11 +326,12 @@ svg path.three {
   background: var(--bg-color);
 }
 
+/* Use CSS Grid for a 3-column layout on desktop */
 .product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+  justify-items: center;
 }
 
 .product-card {
@@ -363,7 +364,7 @@ svg path.three {
   margin: 0 15px 15px;
 }
 
-/* Button for Products (Variant 2) */
+/* Button for Products (Variant 2) with Glowing Effect */
 .btn {
   display: inline-block;
   padding: 10px 30px;
@@ -487,6 +488,7 @@ svg path.three {
 /* Responsive Design */
 @media (max-width: 768px) {
   .category-grid, .partner-grid, .product-grid {
+    grid-template-columns: 1fr;
     flex-direction: column;
     align-items: center;
   }
