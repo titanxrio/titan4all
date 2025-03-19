@@ -2,60 +2,43 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Zerobyte – Powered by Titan</title>
+  <title>Zerobyte – All powered by Titan</title>
+  <!-- Verweise auf das externe CSS- und JS-File -->
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
-
-  <!-- Header bleibt oben fixiert -->
   <header>
-    <h1 class="glitch" data-text="ZEROBYTE">ZEROBYTE</h1>
-    <p>powered by Titan</p>
+    <h1>ZEROBYTE</h1>
+    <p class="subtitle">All powered by Titan</p>
   </header>
 
-  <!-- Slide 1: Wir entwickeln High Quality Stuff -->
-  <section class="slide" id="develop">
-    <div class="slide-content">
-      <h2>Wir entwickeln High Quality Stuff</h2>
-      <img src="images/coding.png" alt="Coding" class="coding-img">
-      <p>
-        Zusammen mit meinen Freunden erschaffe ich coole Projekte und teile sie mit euch –
-        Innovation und Qualität stehen bei uns an erster Stelle.
-      </p>
-    </div>
+  <!-- Block 1: Bild + kurzer Text -->
+  <section class="image-coding-section fade-in-section">
+    <img src="images/coding.png" alt="Coding" class="coding-image">
+    <p class="top-quality-text">
+      Wir entwickeln erstklassige Tools und Services für die digitale Welt.
+    </p>
   </section>
 
-  <!-- Slide 2: Wir verkaufen (Produkte) -->
-  <section class="slide" id="sell">
-    <div class="slide-content">
-      <h2>Wir verkaufen:</h2>
-      <div class="sell-items">
-        <div class="sell-item">Nitro</div>
-        <div class="sell-item">Server Boosts</div>
-        <div class="sell-item">Accounts</div>
-        <div class="sell-item">Subscriptions</div>
-      </div>
-      <p>
-        ...und vieles mehr! Alles selbstverständlich im dunklen Stil und mit der
-        Qualität, die du von Zerobyte erwartest.
-      </p>
+  <!-- Block 2: Wir verkaufen -->
+  <section class="sell-section fade-in-section">
+    <h2>Wir verkaufen:</h2>
+    <div class="sell-items">
+      <div class="sell-item">Nitro</div>
+      <div class="sell-item">Server Boosts</div>
+      <div class="sell-item">Accounts</div>
+      <div class="sell-item">Subscriptions</div>
     </div>
+    <p class="more">...und vieles mehr!</p>
   </section>
 
-  <!-- Slide 3: Partner-Server -->
-  <section class="slide" id="partners">
-    <div class="slide-content">
-      <h2>Unsere Partner</h2>
-      <p>
-        Hier sind einige unserer Partner-Server, mit denen wir eng zusammenarbeiten,
-        um euch immer das Beste bieten zu können:
-      </p>
-      <div class="partner-servers">
-        <div class="partner-card">Server 1</div>
-        <div class="partner-card">Server 2</div>
-        <div class="partner-card">Server 3</div>
-      </div>
+  <!-- Block 3: Unsere Partner -->
+  <section class="partners-section fade-in-section">
+    <h2>Unsere Partner</h2>
+    <div class="partners">
+      <div class="partner-card">Server 1</div>
+      <div class="partner-card">Server 2</div>
+      <div class="partner-card">Server 3</div>
     </div>
   </section>
 
@@ -63,5 +46,7 @@
     <p>&copy; 2025 Zerobyte – powered by Titan</p>
   </footer>
 
+  <!-- Script am Ende, damit die Seite zuerst lädt -->
+  <script src="script.js"></script>
 </body>
 </html>
