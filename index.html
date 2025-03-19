@@ -1,52 +1,67 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Zerobyte – All powered by Titan</title>
-  <!-- Verweise auf das externe CSS- und JS-File -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>zerobyte – All Powered by Titan</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Using Anime.js for subtle glitch effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
-  <header>
-    <h1>ZEROBYTE</h1>
-    <p class="subtitle">All powered by Titan</p>
-  </header>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">zerobyte – all powered by Titan</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="titan.html">Titan</a></li>
+    </ul>
+  </nav>
 
-  <!-- Block 1: Bild + kurzer Text -->
-  <section class="image-coding-section fade-in-section">
-    <img src="images/coding.png" alt="Coding" class="coding-image">
-    <p class="top-quality-text">
-      Wir entwickeln erstklassige Tools und Services für die digitale Welt.
-    </p>
-  </section>
-
-  <!-- Block 2: Wir verkaufen -->
-  <section class="sell-section fade-in-section">
-    <h2>Wir verkaufen:</h2>
-    <div class="sell-items">
-      <div class="sell-item">Nitro</div>
-      <div class="sell-item">Server Boosts</div>
-      <div class="sell-item">Accounts</div>
-      <div class="sell-item">Subscriptions</div>
-    </div>
-    <p class="more">...und vieles mehr!</p>
-  </section>
-
-  <!-- Block 3: Unsere Partner -->
-  <section class="partners-section fade-in-section">
-    <h2>Unsere Partner</h2>
-    <div class="partners">
-      <div class="partner-card">Server 1</div>
-      <div class="partner-card">Server 2</div>
-      <div class="partner-card">Server 3</div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>We develop 1337 quality stuff…</h1>
+      <p>Your journey to the pinnacle of digital mastery begins here.</p>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Zerobyte – powered by Titan</p>
-  </footer>
+  <!-- Overview Tiles -->
+  <section class="overview">
+    <div class="card">
+      <h2>Tool 1</h2>
+      <p>Placeholder description for Tool 1.</p>
+    </div>
+    <div class="card">
+      <h2>Tool 2</h2>
+      <p>Placeholder description for Tool 2.</p>
+    </div>
+    <div class="card">
+      <h2>Tool 3</h2>
+      <p>Placeholder description for Tool 3.</p>
+    </div>
+  </section>
 
-  <!-- Script am Ende, damit die Seite zuerst lädt -->
+  <!-- Partners Section -->
+  <section class="partners">
+    <h2>Our Partners</h2>
+    <div class="partner-cards">
+      <div class="partner-card">
+        <h3>Server 1</h3>
+        <p>High performance server node.</p>
+      </div>
+      <div class="partner-card">
+        <h3>Server 2</h3>
+        <p>Reliable and secure infrastructure.</p>
+      </div>
+      <div class="partner-card">
+        <h3>Server 3</h3>
+        <p>Cutting-edge cloud solutions.</p>
+      </div>
+    </div>
+  </section>
+  
   <script src="script.js"></script>
 </body>
 </html>
