@@ -1,4 +1,4 @@
-/* Reset & Grundlayout */
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,145 +6,224 @@
 }
 
 body {
-  background-color: #0A0A0A;
-  color: #E2E2E2;
-  font-family: "Arial", sans-serif;
-  line-height: 1.5;
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 40px 20px;
-  border-bottom: 1px solid #333;
+a {
+  color: #00ffcc; /* Neon accent */
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  color: #00FF00; /* Neon-Grün für Darkweb-Flair */
-  margin-bottom: 10px;
+a:hover {
+  color: #ff00ff; /* Alternate neon accent on hover */
 }
 
-.subtitle {
-  font-size: 1.1rem;
-  color: #ccc;
-}
-
-/* Animations-Grundlage: fade-in-section startet unsichtbar */
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-/* Sobald die Section "visible" ist, fade-in-Effekt */
-.fade-in-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 1s ease;
-}
-
-/* Sektion: Bild + Text */
-.image-coding-section {
+/* Navbar */
+.navbar {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 60px 20px;
-  gap: 40px;
-  border-bottom: 1px solid #333;
+  padding: 20px;
+  background: #1f1f1f;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.coding-image {
-  width: 300px;
-  max-width: 90%;
-  border: 2px solid #00FF00;
-  border-radius: 5px;
-}
-
-.top-quality-text {
-  max-width: 400px;
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-/* Sektion: Wir verkaufen */
-.sell-section {
-  text-align: center;
-  padding: 60px 20px;
-  border-bottom: 1px solid #333;
-}
-
-.sell-section h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #00FF00;
-}
-
-.sell-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.sell-item {
-  background-color: #1F1F1F;
-  border: 1px solid #00FF00;
-  padding: 20px 40px;
-  border-radius: 8px;
+.logo {
+  font-size: 1.5rem;
   font-weight: bold;
-  font-size: 1rem;
-  transition: transform 0.3s;
+  color: #00ffcc;
 }
 
-.sell-item:hover {
-  transform: scale(1.05);
-}
-
-.more {
-  margin-top: 20px;
-  font-size: 1rem;
-  color: #bbb;
-}
-
-/* Sektion: Partner */
-.partners-section {
-  text-align: center;
-  padding: 60px 20px;
-  border-bottom: 1px solid #333;
-}
-
-.partners-section h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #00FF00;
-}
-
-.partners {
+.nav-links {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links li a {
+  font-size: 1rem;
+  padding: 5px 10px;
+}
+
+.nav-links li a.active {
+  border-bottom: 2px solid #00ffcc;
+}
+
+/* Hero Section */
+.hero {
+  height: 80vh;
+  background: url('hero-bg.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 18, 18, 0.7);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+}
+
+/* Overview Tiles */
+.overview {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #1f1f1f;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  /* Minimal glitch effect */
+  animation: glitch 0.5s;
+}
+
+/* Glitch keyframes */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+/* Partners Section */
+.partners {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.partner-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .partner-card {
-  background-color: #1F1F1F;
-  border: 1px solid #00FF00;
-  padding: 20px 30px;
+  background: #1f1f1f;
+  margin: 10px;
+  padding: 20px;
+  width: 250px;
   border-radius: 8px;
-  font-size: 1rem;
-  transition: transform 0.3s;
 }
 
-.partner-card:hover {
-  transform: translateY(-5px);
-}
-
-/* Footer */
-footer {
+/* Products Section */
+.products {
+  padding: 60px 20px;
   text-align: center;
-  padding: 30px 20px;
-  border-top: 1px solid #333;
-  font-size: 0.9rem;
-  color: #aaa;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background: #1f1f1f;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  animation: glitch 0.5s;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #00ffcc;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.product-card button:hover {
+  background-color: #ff00ff;
+}
+
+/* Titan Page */
+.titan-intro, .titan-details {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.titan-intro h1 {
+  font-size: 3rem;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+.titan-details article {
+  background: #1f1f1f;
+  margin: 20px auto;
+  padding: 20px;
+  width: 80%;
+  border-radius: 8px;
+  text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .overview, .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .titan-details article {
+    width: 100%;
+  }
 }
