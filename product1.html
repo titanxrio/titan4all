@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Product 1 – Nitro</title>
-  <link rel="stylesheet" href="product1.css">
+  <link rel="stylesheet" href="product.css">
   <!-- Anime.js for dynamic animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
+  <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="logo">zerobyte – powered by Titan</div>
     <ul class="nav-links">
@@ -17,13 +18,28 @@
       <li><a href="titan.html">Titan</a></li>
     </ul>
   </nav>
+  
+  <!-- Product Detail Section -->
   <section class="product-detail">
-    <h1>Nitro</h1>
-    <img src="placeholder.jpg" alt="Nitro">
-    <p class="price">$149.99</p>
-    <p>Nitro is the ultimate boost for your digital operations, delivering unparalleled speed and performance.</p>
-    <a class="glow-btn" href="product.html" style="--clr:#1e9bff"><span>Back to Products</span><i></i></a>
+    <div class="product-container">
+      <!-- Left Column: Product Info -->
+      <div class="product-left">
+        <h1>Nitro</h1>
+        <img src="placeholder.jpg" alt="Nitro">
+        <p class="price">$149.99</p>
+        <p>Nitro is the ultimate boost for your digital operations, delivering unparalleled speed and performance.</p>
+      </div>
+      <!-- Right Column: Stock & Purchase -->
+      <div class="product-right">
+        <div class="stock-info">
+          <h3>Stock</h3>
+          <p>Available: 25</p>
+        </div>
+        <a class="purchase-btn" href="https://discord.com/invite/zerobyte" target="_blank">Purchase</a>
+      </div>
+    </div>
   </section>
+  
   <script src="script.js"></script>
 </body>
 </html>
