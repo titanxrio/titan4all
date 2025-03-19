@@ -1,4 +1,4 @@
-/* CSS-Variablen für konsistentes Styling */
+/* CSS Variables for Consistent Styling */
 :root {
   --bg-color: #121212;
   --secondary-bg: #1c1c1c;
@@ -8,7 +8,7 @@
   --font-family: 'Roboto Mono', monospace;
 }
 
-/* Globaler Reset */
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -109,18 +109,18 @@ body {
   margin-bottom: 30px;
 }
 
-/* CTA Button – mit krasser, dynamischer Animation */
+/* CTA Button with Advanced Hover Effects */
 .cta {
   display: inline-flex;
   align-items: center;
   padding: 10px 45px;
   text-decoration: none;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-family);
   font-size: 1.2rem;
   color: #fff;
   background: var(--accent-color);
   transition: 0.5s;
-  box-shadow: 6px 6px 0 black;
+  box-shadow: 6px 6px 0 #000;
   transform: skewX(-15deg);
   overflow: hidden;
   position: relative;
@@ -131,7 +131,6 @@ body {
 }
 
 .cta:hover {
-  transition: 0.5s;
   box-shadow: 10px 10px 0 var(--accent-hover);
 }
 
@@ -150,7 +149,7 @@ body {
   margin-right: 45px;
 }
 
-/* SVG Pfad-Animationen */
+/* SVG Arrow Animations */
 .cta svg path {
   transition: transform 0.5s, fill 0.5s;
 }
@@ -182,7 +181,7 @@ svg path.three {
   100% { fill: #fff; }
 }
 
-/* Kategorien Section */
+/* Categories Section */
 .categories {
   padding: 100px 20px;
   background: var(--bg-color);
@@ -280,6 +279,133 @@ svg path.three {
   color: var(--accent-color);
 }
 
+/* Product Hero Section */
+.product-hero {
+  height: 60vh;
+  background: url('product-bg.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 18, 18, 0.85);
+}
+
+.product-hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards 0.5s;
+}
+
+.product-hero-content h1 {
+  font-size: 3rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.product-hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Products Section */
+.products {
+  padding: 80px 20px;
+  background: var(--bg-color);
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.product-card {
+  background: var(--secondary-bg);
+  border-radius: 8px;
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.product-card img {
+  width: 100%;
+  display: block;
+}
+
+.product-card h3 {
+  font-size: 1.5rem;
+  margin: 15px;
+  color: var(--accent-color);
+}
+
+.product-card p {
+  font-size: 1rem;
+  margin: 0 15px 15px;
+}
+
+/* Titan Intro Section */
+.titan-intro {
+  padding: 100px 20px;
+  background: var(--bg-color);
+  text-align: center;
+}
+
+.titan-intro h1 {
+  font-size: 3rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.titan-intro p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Titan Details Section */
+.titan-details {
+  padding: 60px 20px;
+  background: var(--bg-color);
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.titan-details article {
+  background: var(--secondary-bg);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+}
+
+.titan-details h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+}
+
 /* Footer */
 .footer {
   background: var(--secondary-bg);
@@ -288,7 +414,7 @@ svg path.three {
   font-size: 0.9rem;
 }
 
-/* Fade-In Up Animation */
+/* FadeInUp Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -302,8 +428,11 @@ svg path.three {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .category-grid, .partner-grid {
+  .category-grid, .partner-grid, .product-grid {
     flex-direction: column;
     align-items: center;
+  }
+  .titan-details {
+    padding: 20px;
   }
 }
