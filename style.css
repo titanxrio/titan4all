@@ -1,0 +1,117 @@
+/* style.css */
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #0f0;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: hidden;
+}
+
+a {
+  color: #0f0;
+  text-decoration: none;
+}
+
+header {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #0f0;
+}
+
+nav a {
+  margin: 0 15px;
+  font-size: 1.2em;
+}
+
+.section {
+  padding: 120px 20px 60px; /* extra top-padding wegen fixed header */
+  min-height: 100vh;
+  position: relative;
+}
+
+.section-title {
+  font-size: 3em;
+  text-align: center;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.button-discord {
+  background: #7289da;
+  border: none;
+  padding: 15px 30px;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.button-discord:hover {
+  transform: scale(1.1);
+}
+
+.product {
+  background: #111;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  border: 1px solid #0f0;
+  border-radius: 10px;
+  text-align: center;
+  animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+footer {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9em;
+  border-top: 1px solid #0f0;
+}
+
+.friend-servers {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.server {
+  background: #222;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #0f0;
+  margin: 10px;
+}
+
+/* Zusätzliche Animation für einzelne Elemente */
+.animate {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
