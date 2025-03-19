@@ -1,15 +1,15 @@
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
-  // Beispiel: Man könnte hier weitere dynamische Animationen oder Interaktionen hinzufügen.
-  const animElements = document.querySelectorAll('.animate');
-  const triggerAnimation = () => {
-    animElements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 50) {
-        el.style.animationPlayState = 'running';
+  // On-Scroll Animation: Elemente werden sichtbar, wenn sie ins Blickfeld kommen
+  const animateElements = document.querySelectorAll('.animate');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.style.opacity = 1;
+        entry.style.transform = 'translateY(0)';
       }
     });
-  };
-  window.addEventListener('scroll', triggerAnimation);
-  triggerAnimation();
+  }, { threshold: 0.3 });
+  
+  animateElements.forEach(el => observer.observe(el));
 });
