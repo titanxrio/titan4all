@@ -1,0 +1,164 @@
+/* product.css - Styles for the Products Page */
+:root {
+  --bg-color: #0D0D0D;
+  --secondary-bg: #1A1A1A;
+  --accent-color: #00D2FF;
+  --accent-hover: #FF007F;
+  --text-color: #E0E0E0;
+  --font-family: 'Roboto Mono', monospace;
+}
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+.navbar {
+  position: fixed;
+  top: 0; width: 100%;
+  background: var(--secondary-bg);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+.nav-links li { margin-left: 20px; }
+.nav-links li a {
+  color: var(--accent-color);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease;
+}
+.nav-links li a:hover,
+.nav-links li a.active { border-bottom: 2px solid var(--accent-color); }
+/* Product Hero Section */
+.product-hero {
+  height: 60vh;
+  background: url('product-bg.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(13,13,13,0.85);
+}
+.product-hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards 0.5s;
+}
+.product-hero-content h1 {
+  font-size: 3rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px var(--accent-color);
+  margin-bottom: 20px;
+}
+.product-hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+/* Products Section */
+.products {
+  padding: 80px 20px;
+  background: var(--bg-color);
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+.product-card {
+  background: var(--secondary-bg);
+  border-radius: 8px;
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+}
+.product-card img {
+  width: 100%;
+  display: block;
+}
+.product-card h3 {
+  font-size: 1.5rem;
+  margin: 15px;
+  color: var(--accent-color);
+}
+.product-card p {
+  font-size: 1rem;
+  margin: 0 15px 15px;
+}
+/* Button (Variant 2) with Glowing Effect */
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 0 15px 15px;
+  font-size: 1rem;
+  color: var(--accent-color);
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  border-radius: 4px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s, border-color 0.4s;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: var(--accent-hover);
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: -1;
+}
+.btn:hover {
+  color: #fff;
+  border-color: var(--accent-hover);
+}
+.btn:hover::after {
+  width: 300%;
+  height: 300%;
+}
+/* Footer */
+.footer {
+  background: var(--secondary-bg);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+/* FadeInUp Animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
