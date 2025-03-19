@@ -1,93 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>zerobyte – All Powered by Titan</title>
+  <title>zerobyte – Ultimate Darkweb Experience</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Anime.js for refined, subtle animations -->
+  <!-- Anime.js für dezente Animationen -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar">
-    <div class="logo">zerobyte – all powered by Titan</div>
+  <nav class="navbar" id="navbar">
+    <div class="logo">zerobyte – powered by Titan</div>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="product.html">Produkte</a></li>
       <li><a href="titan.html">Titan</a></li>
     </ul>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>We develop 1337 quality stuff…</h1>
-      <p>Your gateway to elite digital innovation.</p>
+      <h1>Willkommen in der ultimativen Darkweb Experience</h1>
+      <p>Erlebe, wie zerobyte Grenzen sprengt – Hightech trifft auf Dark Elegance.</p>
     </div>
   </section>
 
-  <!-- Product Grid Section -->
-  <section class="products">
-    <h2>Our Exclusive Products</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="placeholder.jpg" alt="Nitro">
-        <h3>Nitro</h3>
-        <p>High performance boost to turbocharge your operations.</p>
-        <button>Buy Now</button>
-      </div>
-      <div class="product-card">
-        <img src="placeholder.jpg" alt="Server Boosts">
-        <h3>Server Boosts</h3>
-        <p>Optimize and elevate your server's performance to the next level.</p>
-        <button>Buy Now</button>
-      </div>
-      <div class="product-card">
-        <img src="placeholder.jpg" alt="Accounts">
-        <h3>Accounts</h3>
-        <p>Secure, managed, and built for power.</p>
-        <button>Buy Now</button>
-      </div>
-      <div class="product-card">
-        <img src="placeholder.jpg" alt="Subscriptions">
-        <h3>Subscriptions</h3>
-        <p>Flexible plans with premium support and features.</p>
-        <button>Buy Now</button>
-      </div>
-      <div class="product-card">
-        <img src="placeholder.jpg" alt="Tools">
+  <!-- Kategorien Section (erscheint beim Scrollen) -->
+  <section class="categories">
+    <h2>Unsere Kategorien</h2>
+    <div class="category-grid">
+      <div class="category-card" data-category="Tools">
         <h3>Tools</h3>
-        <p>Advanced digital utilities engineered for excellence.</p>
-        <button>Buy Now</button>
+        <p>Leistungsstarke Werkzeuge für digitale Meisterleistungen.</p>
+      </div>
+      <div class="category-card" data-category="Server Boosts">
+        <h3>Server Boosts</h3>
+        <p>Steigere die Performance deiner Infrastruktur.</p>
+      </div>
+      <div class="category-card" data-category="Accounts">
+        <h3>Accounts</h3>
+        <p>Exklusive Zugänge, die Privilegierte verbinden.</p>
+      </div>
+      <div class="category-card" data-category="Subscriptions">
+        <h3>Subscriptions</h3>
+        <p>Premium-Abos, maßgeschneidert für deinen Erfolg.</p>
       </div>
     </div>
   </section>
 
-  <!-- Partners Section -->
-  <section class="partners">
-    <h2>Our Partners</h2>
-    <div class="partner-cards">
-      <div class="partner-card">
-        <h3>Server 1</h3>
-        <p>High-performance, cutting-edge server technology.</p>
-      </div>
-      <div class="partner-card">
-        <h3>Server 2</h3>
-        <p>Secure and reliable infrastructure solutions.</p>
-      </div>
-      <div class="partner-card">
-        <h3>Server 3</h3>
-        <p>State-of-the-art cloud services at your fingertips.</p>
-      </div>
-    </div>
-  </section>
-  
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2025 zerobyte. All Rights Reserved.</p>
+    <p>&copy; 2025 zerobyte. Alle Rechte vorbehalten.</p>
   </footer>
-  
+
   <script src="script.js"></script>
 </body>
 </html>
