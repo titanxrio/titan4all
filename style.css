@@ -1,14 +1,14 @@
-/* CSS Variables for streamlined styling */
+/* CSS-Variablen für konsistentes Styling */
 :root {
   --bg-color: #121212;
-  --secondary-bg: #1f1f1f;
+  --secondary-bg: #1c1c1c;
   --accent-color: #00ffcc;
   --accent-hover: #ff00ff;
   --text-color: #e0e0e0;
   --font-family: 'Roboto Mono', monospace;
 }
 
-/* Global Styles */
+/* Globaler Reset & Basisstile */
 * {
   margin: 0;
   padding: 0;
@@ -21,28 +21,31 @@ body {
   font-family: var(--font-family);
   line-height: 1.6;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 a:hover {
   color: var(--accent-hover);
 }
 
-/* Navbar */
+/* Navigation */
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--secondary-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: var(--secondary-bg);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  padding: 15px 30px;
+  z-index: 1000;
+  transition: top 0.3s;
 }
 
 .logo {
@@ -64,15 +67,18 @@ a:hover {
 .nav-links li a {
   font-size: 1rem;
   padding: 5px 10px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s;
 }
 
-.nav-links li a.active {
+.nav-links li a.active,
+.nav-links li a:hover {
   border-bottom: 2px solid var(--accent-color);
 }
 
 /* Hero Section */
 .hero {
-  height: 80vh;
+  height: 100vh;
   background: url('hero-bg.jpg') no-repeat center center/cover;
   position: relative;
   display: flex;
@@ -80,46 +86,123 @@ a:hover {
   justify-content: center;
 }
 
-.hero::before {
-  content: '';
+.hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(18, 18, 18, 0.75);
+  background: rgba(18, 18, 18, 0.85);
 }
 
 .hero-content {
   position: relative;
   text-align: center;
   z-index: 1;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .hero-content h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
   color: var(--accent-color);
   text-shadow: 0 0 10px var(--accent-color);
+  margin-bottom: 20px;
 }
 
 .hero-content p {
   font-size: 1.2rem;
 }
 
-/* Section Titles */
-section h2 {
+/* Kategorien Section */
+.categories {
+  padding: 100px 20px;
+  background: var(--bg-color);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.categories.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.categories h2 {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
   color: var(--accent-color);
   text-shadow: 0 0 5px var(--accent-color);
 }
 
-/* Product Grid Section */
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.category-card {
+  background: var(--secondary-bg);
+  padding: 30px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.category-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+}
+
+/* Product Hero Section (auf Produktseite) */
+.product-hero {
+  height: 60vh;
+  background: url('product-bg.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 18, 18, 0.85);
+}
+
+.product-hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.product-hero-content h1 {
+  font-size: 3rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.product-hero-content p {
+  font-size: 1.2rem;
+}
+
+/* Produkte Section (auf Produktseite) */
 .products {
-  padding: 60px 20px;
+  padding: 80px 20px;
   background: var(--bg-color);
 }
 
@@ -135,7 +218,7 @@ section h2 {
   border-radius: 8px;
   width: 300px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -171,48 +254,16 @@ section h2 {
   font-family: var(--font-family);
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 .product-card button:hover {
   background-color: var(--accent-hover);
 }
 
-/* Partners Section */
-.partners {
-  padding: 60px 20px;
-  background: var(--secondary-bg);
-  text-align: center;
-}
-
-.partner-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.partner-card {
-  background: var(--bg-color);
-  border: 1px solid var(--accent-color);
-  border-radius: 8px;
-  padding: 20px;
-  width: 250px;
-}
-
-.partner-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: var(--accent-color);
-}
-
-.partner-card p {
-  font-size: 1rem;
-}
-
-/* Titan Page */
-.titan-intro, .titan-details {
-  padding: 60px 20px;
+/* Titan-Seite */
+.titan-intro {
+  padding: 100px 20px;
   background: var(--bg-color);
   text-align: center;
 }
@@ -229,11 +280,13 @@ section h2 {
 }
 
 .titan-details {
+  padding: 60px 20px;
+  background: var(--bg-color);
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
 .titan-details article {
@@ -259,7 +312,7 @@ section h2 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .product-grid, .partner-cards {
+  .category-grid, .product-grid {
     flex-direction: column;
     align-items: center;
   }
